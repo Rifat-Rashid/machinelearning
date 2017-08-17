@@ -6,12 +6,23 @@ import java.util.List;
  */
 public class launcher {
 
-    int[] a = {1, 2, };
+    int[] testX = {1, 2, 3};
+    int[] testY = {2, 4, 6};
+    int points = 3;
+    double m = 0.1; //start slope
 
     public static void main(String[] args){
-
-
     }
+
+    public double getError(){
+        int sum = 0;
+        for(int i = 0; i < points; i++){
+            sum += java.lang.Math.pow((testX[i] * m), 2);
+        }
+        return sum / m;
+    }
+
+
 
 
 }
