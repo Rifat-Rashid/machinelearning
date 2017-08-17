@@ -19,6 +19,7 @@ public class launcher {
         ITrace2D trace = new Trace2DSimple();
         chart.addTrace(trace);
         Random random = new Random();
+        // number of points to create
         for (int i = 100; i >= 0; i--) {
             trace.addPoint(i, random.nextDouble() * 10.0 + i);
         }
