@@ -14,9 +14,17 @@ public class launcher {
     static double minChange = .05;
 
     public static void main(String[] args){
-        while(getSlope() < minChange){
-            iterate();
-        }
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                while(getSlope() > minChange){
+                    iterate();
+                }
+                System.out.println(m);
+            }
+        };
+        new Thread(runnable).start();
+
     }
 
     public double getError(){
@@ -24,7 +32,7 @@ public class launcher {
         for(int i = 0; i < points; i++){
             sum += java.lang.Math.pow((testX[i] * m - testY[i]), 2);
         }
-        return sum / m;
+        return sum / points;
     }
 
     public static void iterate(){
@@ -41,6 +49,6 @@ public class launcher {
         for(int i = 0; i < points; i++){
             sum += ((testX[i] * m) - testX[i]) * testY[i];
         }
-        return sum / m;
+        return sum / points;
     }
 }
