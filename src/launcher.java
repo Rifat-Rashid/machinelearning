@@ -6,7 +6,6 @@ import java.util.List;
  */
 public class launcher {
 
-//
     int[] a = {1, 2, };
 
     public static void main(String[] args){
